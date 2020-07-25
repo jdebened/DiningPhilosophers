@@ -9,6 +9,7 @@ session_start();
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
+<script src="jquery-2.1.4.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
@@ -89,7 +90,7 @@ Another major issue that arises in this problem is called <q>starvation</q>.  St
         <div class="row">
           <div class="col-md-10"></div>
           <div class="col-md-2">
-            <a href = "realWorld.php?PID=<?=$PID?>"><button type="button" class="btn btn-lg btn-primary">Next</button></a>
+            <a href = "realWorld.php"><button type="button" class="btn btn-lg btn-primary">Next</button></a>
           </div>
         </div>
 

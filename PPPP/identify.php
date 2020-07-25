@@ -9,6 +9,7 @@ session_start();
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script>
@@ -24,10 +25,6 @@ var answers = ["<div class='border' style='background-color:#f45d01'><b>Incorrec
 			   "<div class='border' style='background-color:#f45d01'><b>Incorrect.</b> All cars are still able to move through the intersection even if they are going slowly. An example of <b>Deadlock</b> would be if both lights are flashing red. Four student drivers pull up to the stoplights and are unsure of what to do. They each wait for the others to go through. Because no cars will move through until a different car has, no cars make it through the intersection.</div>", 
 			   "<div class='border' style='background-color:#97cc04'><b>Correct!</b> While cars traveling through the yellow light are given a higher priority, some cars do make it through the flashing red light as they are able to pass when the coast is clear.</div>"];
 
-function transaction(comment){
-  $.get("transact.php?PID=<?=$PID?>&string=<?=$PID?>,<?=$PageName?>," + comment);
-}
-
 function showAnswer(num) {
 	var show;
 	var hide1;
@@ -40,12 +37,6 @@ function showAnswer(num) {
 			hide1.setAttribute("style", "display: none");
 			hide2 = document.getElementById('answer3');
 			hide2.setAttribute("style", "display: none");
-			if(clicks == 0) {
-				transaction("Clicked correct answer.");
-			}
-			else {
-				transaction("Clicked incorrect answer.");
-			}
 			break;
 		case 2:
 			show = document.getElementById('answer2');
@@ -54,12 +45,6 @@ function showAnswer(num) {
 			hide1.setAttribute("style", "display: none");
 			hide2 = document.getElementById('answer3');
 			hide2.setAttribute("style", "display: none");
-			if(clicks == 1) {
-				transaction("Clicked correct answer.");
-			}
-			else {
-				transaction("Clicked incorrect answer.");
-			}
 			break;
 		case 3:
 			show = document.getElementById('answer3');
@@ -68,12 +53,6 @@ function showAnswer(num) {
 			hide1.setAttribute("style", "display: none");
 			hide2 = document.getElementById('answer2');
 			hide2.setAttribute("style", "display: none");
-			if(clicks == 2) {
-				transaction("Clicked correct answer.");
-			}
-			else {
-				transaction("Clicked incorrect answer.");
-			}
 			break;
 		default:
 			break;
@@ -114,7 +93,7 @@ function clickUp() {
 	}
 	else {
 		var next = document.getElementById('next_button');
-		next.setAttribute("href", "interactiveExplanation.php?PID=<?=$PID?>");
+		next.setAttribute("href", "interactiveExplanation.php");
 	}
 	return 0;
 }

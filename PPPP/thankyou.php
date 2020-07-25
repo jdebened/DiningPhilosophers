@@ -27,10 +27,6 @@ session_start();
 Thank you for using our tool, we hope you have enjoyed working through Placating Plato with Plates of Pasta.
 <br>
 <br>
-To continue with the Survey, please enter the password below in the box underneath this window, then click the next arrow.</p>
-
-<br><br>
-Password: <b>laughter</b> 
 </div>
 
 <div class="row">

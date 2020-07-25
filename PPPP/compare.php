@@ -9,6 +9,7 @@ session_start();
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
+<script src="jquery-2.1.4.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script>
@@ -142,9 +143,6 @@ function serve(i){<br>
 
 var answers = ["Correct! The Waiter ensure each philosopher is given the same amount of time to eat.", "Incorrect. As the waiter circles the table, he first ensure philosophers 1-4 are not hungry, making him unable to reach philosopher 5 before that philosopher starves."];
 
-function transaction(comment){
-  $.get("transact.php?PID=<?=$PID?>&string=<?=$PID?>,<?=$PageName?>," + comment);
-}
 
 function showAnswer(num) {
 	var show;
@@ -156,14 +154,12 @@ function showAnswer(num) {
 			show.setAttribute("style", "background-color:#97cc04");
 			hide1 = document.getElementById('answer2');
 			hide1.setAttribute("style", "display: none");
-			transaction("Clicked correct answer.");
 			break;
 		case 2:
 			show = document.getElementById('answer2');
 			show.setAttribute("style", "background-color:#f45d01");
 			hide1 = document.getElementById('answer1');
 			hide1.setAttribute("style", "display: none");
-			transaction("Clicked incorrect answer.");
 			break;
 		default:
 			break;

@@ -11,6 +11,7 @@ session_start();
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
+<script src="jquery-2.1.4.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
@@ -67,7 +68,7 @@ session_start();
         <div class="row">
           <div class="col-md-10"></div>
           <div class="col-md-2">
-            <a href = "intro.php?PID=<?=$PID?>"><button type="button" class="btn btn-lg btn-primary">Get Started</button></a>
+            <a href = "intro.php"><button type="button" class="btn btn-lg btn-primary">Get Started</button></a>
           </div>
         </div>
 

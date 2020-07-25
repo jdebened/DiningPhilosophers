@@ -7,9 +7,6 @@ session_start();
 <link rel="stylesheet" href="css/bootstrap.css">
 
 <!-- Optional theme -->
-<?php
-$PID =  $_GET["PID"];
-?>
 <head>
 <script src="jquery-2.1.4.js"></script>
 <script>
@@ -99,9 +96,6 @@ var items = [{"name": "do_action", "id": -1}, {"name": "if_too_hungry", "id": 1}
 
 
 
-function transaction(comment){
-  $.get("transact.php?PID=<?=$PID?>&string=<?=$PID?>,<?=$PageName?>," + comment);
-}
 
 function next_check() {
 	if(test > 0) {
@@ -273,9 +267,8 @@ function animate(stick_mode, arbitrator_mode, success) {
 }
 
 function run() {
-	transaction("Run My Code Clicked");
 	var next = document.getElementById('next_button');
-	next.setAttribute("href", "compare.php?PID=<?=$PID?>");
+	next.setAttribute("href", "compare.php");
 	test += 1;
 
 	var layer1 = document.getElementById('layer1')
@@ -369,7 +362,6 @@ function run() {
 
 	if(error > 0) {
 		alert(error_string);
-		transaction("Code Run Failed");
 		return 1;
 	}
 
@@ -413,11 +405,9 @@ function run() {
 	animation.setAttribute('style', 'display: inline');
 	animate(stick_mode, arbitrator_mode, success);
 	if(success > 0) {
-		transaction("Code Run successfully");
 		return 0;
 	}
 	else {
-		transaction("Code Run Failed");
 		return 1;
 	}
 }

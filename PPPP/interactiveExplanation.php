@@ -16,12 +16,12 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
   <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
   <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
   <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
   <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
-  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
 <div class="container">
 
@@ -53,7 +53,7 @@ include 'nav.php';
         <div class="row">
           <div class="col-md-10"></div>
           <div class="col-md-2">
-            <a href = "solutions.php?PID=<?=$PID?>"><button type="button" class="btn btn-lg btn-primary">Next</button></a>
+            <a href = "solutions.php"><button type="button" class="btn btn-lg btn-primary">Next</button></a>
           </div>
         </div>
 
@@ -324,7 +324,6 @@ include 'nav.php';
                 retry = 1;
             }
 
-            transaction("Game:Start Clicked");
 
             stage.removeChild(startScreen);
             stage.removeChild(startButton);
@@ -347,15 +346,12 @@ include 'nav.php';
                 createjs.Tween.get(pBarCommand, { loop: false, override: true }).to({ h: 130, y: y1 }, duration);
                 createjs.Tween.get(c1BarCommand, { loop: false, paused: false }).to({ y: c1y, x: c1x }, 200);
                 createjs.Tween.get(c2BarCommand, { loop: false, paused: false }).to({ y: c2y, x: c2x }, 200);
-                transaction("Game:" + p.name + " Now Eating")
             }
             else if (pL.state == 1 || pR.state == 1) {
                 run.push([p.num, 'X'])
                 p.graphics.clear().beginBitmapFill(noChopsticksImg).drawRect(0, 0, 130, 130)
-                transaction("Game:" + p.name + " No Available Chopsticks")
             }
             else {
-                transaction("Game:" + p.name + " No Longer Eating")
                 p.state = 0;
                 run.push([p.num, p.state])
                 duration = speed * (pBarCommand.h / 130);
@@ -402,7 +398,6 @@ include 'nav.php';
 
             clearInterval(scoreTimer);
             clearInterval(ticker);
-            transaction("Game:Game Over");
 
             p1.removeAllEventListeners();
             p2.removeAllEventListeners();
@@ -428,7 +423,6 @@ include 'nav.php';
             endTotal = new createjs.Text(score, "50px Arial", "white");
             endTotal.x = 325; endTotal.y = 260;
             stage.addChild(endTotal);
-            transaction("Game: Score = " + endTotal);
 
             retryButton = new createjs.Shape()
             retryButton.graphics.beginBitmapFill(queue.getResult("retry")).drawRect(0, 0, 287, 103)
@@ -479,7 +473,6 @@ include 'nav.php';
             if ((p1BarCommand.h == 0 || p2BarCommand.h == 0 || p3BarCommand.h == 0 || p4BarCommand.h == 0 || p5BarCommand.h == 0) && gameOverFlag == 0) {
                 //flag to run gameOver() only once
                 gameOverFlag = 1;
-                transaction("Game: Game Ending Health Bars : " + p1BarCommand.h + " " + p2BarCommand.h + " " + p3BarCommand.h + " " + p4BarCommand.h + " " + p5BarCommand.h )
                 gameOver();
             }
         }
@@ -488,11 +481,9 @@ include 'nav.php';
             if (pBarCommand.h < 40 && p.starving == false) {
                 p.graphics.beginBitmapFill(starvingImg).drawRect(0, 0, 130, 130)
                 p.starving = true;
-                transaction("Game:" + p.name + " Starving")
             }
             if (pBarCommand.h > 40 && p.starving == true) {
                 p.starving = false;
-                transaction("Game:" + p.name + " No Longer Starving")
                 if (p.state == 0) {
                     p.graphics.beginBitmapFill(thinkingImg).drawRect(0, 0, 130, 130)
                 }
@@ -515,8 +506,6 @@ include 'nav.php';
             }
             console.log(length)
             console.log(diag)
-            //transaction(length);
-            //transaction(diag);
         }
     </script>
 
