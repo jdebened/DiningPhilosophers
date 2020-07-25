@@ -417,7 +417,7 @@ function run() {
 <div class="container">
 
 
-  <?
+  <?php
   $pageNum = 6;
   include 'nav.php';
   $SESSION['started'] = "t";

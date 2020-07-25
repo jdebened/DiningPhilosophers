@@ -17,7 +17,7 @@ session_start();
 <div class="container">
 
 
-  <?
+  <?php
   $pageNum = 1;
   include 'nav.php';
   $SESSION['started'] = "t";

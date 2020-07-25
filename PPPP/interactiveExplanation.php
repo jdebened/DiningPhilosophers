@@ -25,7 +25,7 @@ session_start();
 
 <div class="container">
 
-<?
+<?php
 $pageNum=4;
 include 'nav.php';
 

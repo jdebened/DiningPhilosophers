@@ -185,7 +185,7 @@ p[class="border"] {border:1px solid #000000}
 <div class="container">
 
 
-  <?
+  <?php
 	$pageNum=7;
   include 'nav.php';
   $SESSION['started'] = "t";

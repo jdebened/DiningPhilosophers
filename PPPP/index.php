@@ -20,8 +20,8 @@ session_start();
 <div class="container">
 
 
-  <?
-  $pageNum = 0;
+  <?php
+  $pageNum=0;
   include 'nav.php';
   ?>
 

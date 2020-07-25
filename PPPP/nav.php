@@ -1,4 +1,4 @@
-<?
+<?php
 
   $PageName = $_SERVER[REQUEST_URI];
   //echo $_SESSION['stage'];
@@ -35,26 +35,26 @@
         <li ><a href="index.php">Home</a></li>
 
         <?php
-        if($_SESSION['stage'] >= 1){
-          echo "<li><a href=\"intro.php">Intro</a></li>";
+       if($_SESSION['stage'] >= 1){
+          echo "<li><a href=\"intro.php\">Intro</a></li>";
         }
         if($_SESSION['stage'] >= 2){
-          echo "<li><a href=\"realWorld.php">Real World Example</a></li>";
+          echo "<li><a href=\"realWorld.php\">Real World Example</a></li>";
         }
         if($_SESSION['stage'] >= 3){
-          echo "<li><a href=\"identify.php">Identify</a></li>";
+          echo "<li><a href=\"identify.php\">Identify</a></li>";
         }
         if($_SESSION['stage'] >= 4){
-          echo "<li><a href=\"interactiveExplanation.php">Philosophers Game</a></li>";
+          echo "<li><a href=\"interactiveExplanation.php\">Philosophers Game</a></li>";
         }
         if($_SESSION['stage'] >= 5){
-          echo "<li><a href=\"solutions.php">Solutions</a></li>";
+          echo "<li><a href=\"solutions.php\">Solutions</a></li>";
         }
         if($_SESSION['stage'] >= 6){
-          echo "<li><a href=\"code.php">Code Game</a></li>";
+          echo "<li><a href=\"code.php\">Code Game</a></li>";
         }
         if($_SESSION['stage'] >= 7){
-          echo "<li><a href=\"compare.php">Compare Solutions</a></li>";
+          echo "<li><a href=\"compare.php\">Compare Solutions</a></li>";
         }
          ?>
 
